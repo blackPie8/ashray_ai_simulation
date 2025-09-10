@@ -9,7 +9,7 @@ public class FollowPlayer : MonoBehaviour
     {
         Vector3 desiredPos = playerTransform.position + offset;
         transform.position = desiredPos;
-        
+
         // transform.LookAt(playerTransform);
     }
 }

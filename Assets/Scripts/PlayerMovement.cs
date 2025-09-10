@@ -5,10 +5,10 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 15f;
     private Rigidbody rb;
 
-  void Start()
-  {
-    rb = GetComponent<Rigidbody>();
-  }
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     void FixedUpdate()
     {
