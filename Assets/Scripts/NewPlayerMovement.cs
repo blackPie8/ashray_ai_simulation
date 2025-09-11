@@ -1,21 +1,24 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class NewPlayerMovement : MonoBehaviour
 {
-    private PlayerNewInput controls;
+    public PlayerNewInput controls;
     private Vector2 moveInput;
     public float speed = 15f;
 
     private void Awake()
     {
         controls = new PlayerNewInput();
-        // Move input
-        controls.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
-        controls.Player.Move.canceled += ctx => moveInput = Vector2.zero;
 
-        // Jump input
-        controls.Player.Jump.performed += ctx => Jump();
+        // Move Action
+        controls.Player.Move.performed += OnMovePerformed;
+        controls.Player.Move.canceled += OnMoveCanceled;
+
+        // Jump Action
+        controls.Player.Jump.performed += OnJumpPerformed;
     }
+
     private void OnEnable()
     {
         controls.Player.Enable();
@@ -24,15 +27,28 @@ public class NewPlayerMovement : MonoBehaviour
     private void OnDisable()
     {
         controls.Player.Disable();
+
+        controls.Player.Move.performed -= OnMovePerformed;
+        controls.Player.Move.canceled -= OnMoveCanceled;
+        controls.Player.Jump.performed -= OnJumpPerformed;
     }
 
     void Update()
     {
         Vector3 move = new Vector3(moveInput.x, 0, moveInput.y);
         transform.Translate(move * speed * Time.deltaTime);
+  }
+
+  private void OnMovePerformed(InputAction.CallbackContext context)
+    {
+        moveInput = context.ReadValue<Vector2>();
     }
 
-    void Jump()
+    private void OnMoveCanceled(InputAction.CallbackContext context)
+    {
+        moveInput = Vector2.zero;
+    }
+    private void OnJumpPerformed(InputAction.CallbackContext context)
     {
         Debug.Log("Jump!");
     }
