@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class CapsuleNPC : MonoBehaviour
 {
+    Rigidbody rb;
     public Transform player;
     public float detectionRange = 8f;
-    public float speed = 5f;
+    public float speed = 10f;
     public Transform[] patrolPoints;
     private int currentPatrolIndex = 0;
 
@@ -12,7 +13,11 @@ public class CapsuleNPC : MonoBehaviour
     private State currentState = State.Patrol;
 
 
-    void Update()
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+    void FixedUpdate()
     {
         float distance = Vector3.Distance(player.position, transform.position);
 
@@ -56,6 +61,9 @@ public class CapsuleNPC : MonoBehaviour
     void MoveTowards(Vector3 targetPos)
     {
         Vector3 direction = (targetPos - transform.position).normalized;
-        transform.position += direction * speed * Time.deltaTime;
+        // transform.position += direction * speed * Time.deltaTime;   // NPCs can move through walls
+
+        Vector3 newPos = rb.position + direction * speed * Time.fixedDeltaTime;
+        rb.MovePosition(newPos);
     }
 }
