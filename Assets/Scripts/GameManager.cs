@@ -4,16 +4,24 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject gameOverCanvas;
+    public GameObject gameWonCanvas;
 
     void Start()
     {
         gameOverCanvas.SetActive(false);
+        gameWonCanvas.SetActive(false);
     }
 
     public void GameOver()
     {
         Time.timeScale = 0f;
         gameOverCanvas.SetActive(true);
+    }
+
+    public void GameWon()
+    {
+        Time.timeScale = 0f;
+        gameWonCanvas.SetActive(true);
     }
 
     public void Restart()
