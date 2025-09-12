@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 9175193750475552071}
   - component: {fileID: 434088163525100184}
   - component: {fileID: -3298625054577247573}
+  - component: {fileID: 8992064286409771738}
   m_Layer: 0
   m_Name: NPC (1)
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,3 +163,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &8992064286409771738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918562683766571253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdc3c32cd3b8491fa3eff96a575fa30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPC_Collisions
+  gameManager: {fileID: 0}
