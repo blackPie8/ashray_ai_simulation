@@ -26,11 +26,12 @@ public class NewPlayerMovement : MonoBehaviour
 
     private void OnDisable()
     {
-        controls.Player.Disable();
 
         controls.Player.Move.performed -= OnMovePerformed;
         controls.Player.Move.canceled -= OnMoveCanceled;
         controls.Player.Jump.performed -= OnJumpPerformed;
+
+        controls.Player.Disable();
     }
 
     void Update()

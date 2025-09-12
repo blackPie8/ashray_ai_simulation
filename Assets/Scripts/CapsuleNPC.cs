@@ -12,10 +12,18 @@ public class CapsuleNPC : MonoBehaviour
     private enum State { Patrol, Chase };
     private State currentState = State.Patrol;
 
+    private Renderer npcRenderer;
+
+    public Color patrolColor = Color.green;
+    public Color chaseColor = Color.red;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        npcRenderer = GetComponent<Renderer>();
+
+        npcRenderer.material.color = patrolColor;
     }
     void FixedUpdate()
     {
@@ -44,6 +52,7 @@ public class CapsuleNPC : MonoBehaviour
 
     void Patrol()
     {
+        npcRenderer.material.color = patrolColor;
         if (patrolPoints.Length == 0) return;
 
         Transform targetPoint = patrolPoints[currentPatrolIndex];
@@ -56,6 +65,7 @@ public class CapsuleNPC : MonoBehaviour
 
     void Chase()
     {
+        npcRenderer.material.color = chaseColor;
         MoveTowards(player.position);
     }
     void MoveTowards(Vector3 targetPos)

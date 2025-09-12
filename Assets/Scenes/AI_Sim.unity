@@ -5495,7 +5495,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512650028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0fc11cac1a70478586fc5b5b2f2acd2, type: 3}
   m_Name: 
@@ -5535,7 +5535,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512650028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c76cacc5858f45989a05d007ed3f9a6, type: 3}
   m_Name: 
@@ -6878,10 +6878,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1512650032}
-    - target: {fileID: 434088163525100184, guid: 5f33ffa99e40842788ce62ac6fd641e3, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 434088163525100184, guid: 5f33ffa99e40842788ce62ac6fd641e3, type: 3}
       propertyPath: 'patrolPoints.Array.data[0]'
       value: 
