@@ -6,9 +6,9 @@ public class WinTrigger : MonoBehaviour
 
   public void OnTriggerEnter(Collider other)
   {
-        if (other.CompareTag("Player"))
-        {
-            gameManager.GameWon();
+    if (other.CompareTag("Player"))
+    {
+      gameManager.GameWon();
     }
   }
 }

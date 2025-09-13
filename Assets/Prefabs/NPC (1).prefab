@@ -176,3 +176,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC_Collisions
   gameManager: {fileID: 0}
+  audioSource: {fileID: 0}

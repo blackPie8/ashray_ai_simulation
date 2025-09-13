@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
     public GameObject gameWonCanvas;
     public GameObject tapToStart;
     public GameObject gameName;
+    public AudioClip winAudio;
+    public AudioClip loseAudio;
+    public AudioSource bgMusic;
 
     void Start()
     {
@@ -29,12 +32,16 @@ public class GameManager : MonoBehaviour
   }
     public void GameOver()
     {
+        bgMusic.Stop();
+        bgMusic.PlayOneShot(loseAudio);
         gameOverCanvas.SetActive(true);
         Time.timeScale = 0f;
     }
 
     public void GameWon()
     {
+        bgMusic.Stop();
+        bgMusic.PlayOneShot(winAudio);
         Time.timeScale = 0f;
         gameWonCanvas.SetActive(true);
     }
