@@ -5,17 +5,32 @@ public class GameManager : MonoBehaviour
 {
     public GameObject gameOverCanvas;
     public GameObject gameWonCanvas;
+    public GameObject tapToStart;
+    public GameObject gameName;
 
     void Start()
     {
         gameOverCanvas.SetActive(false);
         gameWonCanvas.SetActive(false);
+        tapToStart.SetActive(true);
+        gameName.SetActive(true);
+        PauseGame();
     }
 
+  void Update()
+  {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartGame();
+        }
+        {
+        
+    }
+  }
     public void GameOver()
     {
-        Time.timeScale = 0f;
         gameOverCanvas.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void GameWon()
@@ -34,5 +49,17 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Quit Game!");
+    }
+
+    void PauseGame()
+    {
+        Time.timeScale = 0f;
+    }
+
+    void StartGame()
+    {
+        Time.timeScale = 1f;
+        tapToStart.SetActive(false);
+        gameName.SetActive(false);
     }
 }
