@@ -2564,7 +2564,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GAME WON !!!
+  m_Text: YOU WON !!!
 --- !u!222 &498739881
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9148,8 +9148,8 @@ MonoBehaviour:
   gameWonCanvas: {fileID: 1312086176}
   tapToStart: {fileID: 1876215286}
   gameName: {fileID: 814328317}
-  winAudio: {fileID: 8300000, guid: ec688aa83a75448938edfa9faac501a1, type: 3}
-  loseAudio: {fileID: 8300000, guid: b1506be1f7ece4440ba75853fba05427, type: 3}
+  winAudio: {fileID: 8300000, guid: 4b4bc56e9793246c191e550e32ac0878, type: 3}
+  loseAudio: {fileID: 8300000, guid: 4d66c542dd5a04a19a6628892e123e9b, type: 3}
   bgMusic: {fileID: 1074939945}
 --- !u!4 &1530079357
 Transform:
@@ -11047,7 +11047,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CLICK SPACE START GAME
+  m_Text: PRESS SPACE START GAME
 --- !u!222 &1876215290
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12294,6 +12294,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5455960678530777795, guid: a48403825224d4c198a5e362d850178d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.83137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455960678530777795, guid: a48403825224d4c198a5e362d850178d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.49803922
+      objectReference: {fileID: 0}
     - target: {fileID: 5515048212647763979, guid: a48403825224d4c198a5e362d850178d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.51701
@@ -12408,10 +12416,10 @@ SceneRoots:
   - {fileID: 635590176}
   - {fileID: 1252632861}
   - {fileID: 247109290}
+  - {fileID: 701912800}
   - {fileID: 1858162493}
   - {fileID: 1971058033}
   - {fileID: 1530079357}
   - {fileID: 272345703}
   - {fileID: 1074939944}
   - {fileID: 1284941169}
-  - {fileID: 701912800}
