@@ -19,7 +19,7 @@ public class LampFlicker : MonoBehaviour
 
     void Start()
     {
-        bulbMaterial = bulbRenderer.material;
+        bulbMaterial = bulbRenderer.material;   // reference of original material
 
         flickerOffset = Random.Range(0f, 100f);
     }
@@ -37,7 +37,7 @@ public class LampFlicker : MonoBehaviour
             Color finalColor = emissionColor * intensity;
             bulbMaterial.SetColor("_EmissionColor", finalColor);
 
-            // Built-in RP needs this to update emission in scene
+            // Built-in RP
             DynamicGI.SetEmissive(bulbRenderer, finalColor);
         }
     }
