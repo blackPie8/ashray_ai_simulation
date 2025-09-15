@@ -43,7 +43,7 @@ A Unity-based **horror survival game** built with **C#**, where you must navigat
 
 ---
 
-## 📸 Screenshots (Optional)
+## 📸 Screenshots
 
 | ![LoadGame](Assets/Screenshots/loadgame.png) | ![Gameplay](Assets/Screenshots/gameplay.png) |
 |-------------------------------------|----------------------------------------------|
