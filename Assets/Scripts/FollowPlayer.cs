@@ -6,6 +6,7 @@ public class FollowPlayer : MonoBehaviour
     public Vector3 offset;
     void LateUpdate()
     {
+        // added a offset to set camera below the player
         Vector3 desiredPos = playerTransform.position + offset;
         transform.position = desiredPos;
 

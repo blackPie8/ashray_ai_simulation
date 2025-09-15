@@ -6,6 +6,7 @@ public class WinTrigger : MonoBehaviour
 
   public void OnTriggerEnter(Collider other)
   {
+    // compare with player tag to show win panel
     if (other.CompareTag("Player"))
     {
       gameManager.GameWon();

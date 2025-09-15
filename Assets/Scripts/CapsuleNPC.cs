@@ -6,12 +6,14 @@ public class CapsuleNPC : MonoBehaviour
     public Transform player;
     public float detectionRange = 8f;
     public float speed = 10f;
+
+    private float targetProximity = 0.2f;
     public Transform[] patrolPoints;
     private int currentPatrolIndex = 0;
 
+    // enum for State Management
     private enum State { Patrol, Chase };
     private State currentState = State.Patrol;
-
     private Renderer npcRenderer;
 
     public Color patrolColor = Color.green;
@@ -20,6 +22,7 @@ public class CapsuleNPC : MonoBehaviour
 
     void Start()
     {
+        // get rigidbody and renderer
         rb = GetComponent<Rigidbody>();
         npcRenderer = GetComponent<Renderer>();
 
@@ -27,6 +30,7 @@ public class CapsuleNPC : MonoBehaviour
     }
     void FixedUpdate()
     {
+        // calc the distance b/w player and npc
         float distance = Vector3.Distance(player.position, transform.position);
 
         if (distance < detectionRange)
@@ -55,10 +59,14 @@ public class CapsuleNPC : MonoBehaviour
         npcRenderer.material.color = patrolColor;
         if (patrolPoints.Length == 0) return;
 
+        // get patrolPoint co-ordinates and move there
         Transform targetPoint = patrolPoints[currentPatrolIndex];
         MoveTowards(targetPoint.position);
 
-        if (Vector3.Distance(transform.position, targetPoint.position) < 0.2f) {
+        // Check if the curr distance from the target is less than targetProximity
+        if (Vector3.Distance(transform.position, targetPoint.position) < targetProximity)
+        {
+            // loop over Patrol Points
             currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
         }
     }

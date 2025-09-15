@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        // returns value 1 and -1
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
 
@@ -22,8 +23,10 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 targetPos = rb.position + movement * speed * Time.fixedDeltaTime;
 
+        // ray-casting so that player dosen't pass through walls
         if (!Physics.Raycast(rb.position, movement, 0.6f))
         {
+            // rigidbody movement
             rb.MovePosition(targetPos);
         }
 

@@ -6,6 +6,7 @@ public class NPC_Collisions : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        // check for collisions usin tag
         if (collision.gameObject.CompareTag("Player"))
         {
             gameManager.GameOver();
